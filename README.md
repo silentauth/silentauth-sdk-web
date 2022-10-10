@@ -123,7 +123,7 @@ In another terminal you can run `npm run serve` to open a test web page where yo
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
-[https://github.com/tru-ID](https://github.com/tru-ID)
+[https://github.com/silentauth](https://github.com/silentauth)
 
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
