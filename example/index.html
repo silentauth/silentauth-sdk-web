@@ -6,19 +6,19 @@
       <input type="submit" id="phone_check_button" value="Check" />
     </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tru_id/tru-sdk-web/dist/tru-id-sdk.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@silentauth/silentauth-sdk-web/dist/silentauth-sdk.umd.js"></script>
     <script>
       checkCoverage()
 
       async function checkCoverage() {
         const button = document.getElementById('phone_check_button')
         const checkMessage = document.getElementById('check_message')
-        const deviceCoverage = await tru.ID.getReachability('https://{data_residency}.api.tru.id')
+        const deviceCoverage = await silentauth.getReachability('https://{data_residency}.api.silentauth.com')
 
         if (deviceCoverage.status === 200) {
           button.disabled = false
         } else if (deviceCoverage.status === 400) {
-          // tru.ID has no coverage for this mobile network operator
+          // SilentAuth has no coverage for this mobile network operator
           button.disabled = true
           checkMessage.textContent = 'There is no coverage for this mobile network operator, try alternative solutions for verifying user.'
         } else if (deviceCoverage.status === 412) {
@@ -47,11 +47,11 @@
               })
           })
 
-          // use the tru.ID web SDK to navigate to the check_url
+          // use the SilentAuth web SDK to navigate to the check_url
           try {
-            await tru.ID.openCheckUrl(phoneCheckResource.body.check_url)
+            await silentauth.openCheckUrl(phoneCheckResource.body.check_url)
           } catch (e) {
-            if (e.code === tru.ID.DeviceCoverageErrors.NotMobileIP) {
+            if (e.code === silentauth.DeviceCoverageErrors.NotMobileIP) {
               // tell the user they should turn off the wifi
               // and use the mobile connection before proceeding
             }

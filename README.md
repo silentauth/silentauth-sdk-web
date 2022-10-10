@@ -27,18 +27,18 @@ $ npm install @silentauth/silentauth-sdk-web
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@silentauth/silentauth-sdk-web/dist/silentauth-sdk.umd.js"></script>
 <script>
-  tru.ID.getReachability(url)
+  silentauth.getReachability(url)
 </script>
 ```
 
 #### PhoneCheck
 
-When installed via a CDN a `tru.ID` global is installed.
+When installed via a CDN a `silentauth` global is installed.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@tru_id/tru-sdk-web/dist/tru-id-sdk.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@silentauth/silentauth-sdk-web/dist/silentauth-sdk.umd.js"></script>
 <script>
-  tru.ID.openCheckUrl(url, config)
+  silentauth.openCheckUrl(url, config)
 </script>
 ```
 
@@ -47,9 +47,9 @@ When installed via a CDN a `tru.ID` global is installed.
 #### Reachability Check
 
 ```js
-import truID from '@tru_id/tru-sdk-web'
+import silentauth from '@silentauth/silentauth-sdk-web'
 
-truID.getReachability(url)
+silentauth.getReachability(url)
 ```
 
 #### PhoneCheck
@@ -57,9 +57,9 @@ truID.getReachability(url)
 When installed via NPM the imported object exposes the `openCheckUrl` function.
 
 ```js
-import truID from '@tru_id/tru-sdk-web'
+import silentauth from '@silentauth/silentauth-sdk-web'
 
-truID.openCheckUrl(checkUrl, config)
+silentauth.openCheckUrl(checkUrl, config)
 ```
 
 ### `openCheckUrl` Config
@@ -67,7 +67,7 @@ truID.openCheckUrl(checkUrl, config)
 The `openCheckUrl` function takes an optional `config` Object argument:
 
 ```js
-truID.openCheckUrl(url, config)
+silentauth.openCheckUrl(url, config)
 ```
 
 The configuration options are:

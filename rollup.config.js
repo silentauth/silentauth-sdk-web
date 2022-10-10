@@ -13,7 +13,7 @@ export default [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' },
       {
-        name: 'tru.ID',
+        name: 'silentauth',
         file: pkg.browser,
         format: 'umd',
       },

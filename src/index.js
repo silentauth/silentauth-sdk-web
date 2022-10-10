@@ -40,9 +40,9 @@ export function _createIFrameSrc(checkUrl, config = { debug: false }) {
  * Opens the provided `apiBaseUrl` in order to perform the Reachability check.
  *
  * A Reachability check is a test if the current device's active data connection is one of a mobile carrier, 
- * and that this carrier is supported by tru.ID's Phone, Subscriber, and SIM checks.
+ * and that this carrier is supported by SilentAuth's Phone, Subscriber, and SIM checks.
  *
- * @param {String} apiBaseUrl The tru.ID `base_url` used to communicate with the tru.ID APIs. For example: `https://eu.api.tru.id`.
+ * @param {String} apiBaseUrl The SilentAuth `base_url` used to communicate with the SilentAuth APIs. For example: `https://eu.api.silentauth.com`.
  * 
  * @return { reachable: Boolean, body: { network_id: String, network_name: String, country_code: String, products: [] }, status: Integer }
  */
@@ -69,7 +69,7 @@ export async function getReachability(apiBaseUrl) {
  *
  * A PhoneCheck is a test if the current device has authenticated with the mobile carrier using the expected IMSI (SIM Card) and MSISDN (Phone Number).
  *
- * @param {String} checkUrl The tru.ID `check_url` to be requested over the mobile data network as part of the verification workflow.
+ * @param {String} checkUrl The SilentAuth `check_url` to be requested over the mobile data network as part of the verification workflow.
  * @param {Object} customConfig
  * @param {String} customConfig.checkMethod When set to `image` the library will load the `check_url` using a zero pixel image loaded within an <iframe>. When set to `window` the check_url will briefly launch a window that will then be closed.
  * @param {Number} customConfig.windowCloseTimeout The timeout period in milliseconds where the window is closed if `customConfig.checkMethod` is set to `window`. Defaults to 3000 milliseconds.
@@ -90,7 +90,7 @@ export async function openCheckUrl(checkUrl, customConfig) {
 
   function log(...args) {
     if (config.debug) {
-      console.log('tru.ID:sdk-web ', ...args)
+      console.log('silentauth:sdk-web ', ...args)
     }
   }
 

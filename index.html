@@ -52,7 +52,7 @@
           <input
             type="text"
             id="input-test-url"
-            value="https://eu.api.tru.id/phone_check/v0.1/checks/123-test-abc/redirect"
+            value="https://eu.api.silentauth.com/phone_check/v0.1/checks/123-test-abc/redirect"
           />
         </div>
         <div class="box">
@@ -64,7 +64,7 @@
     </div>
     <span id="spinner" class="spinner hidden"></span>
     <pre class="box" id="output" />
-    <script src="/dist/tru-id-sdk.umd.js"></script>
+    <script src="/dist/silentauth-sdk.umd.js"></script>
     <script>
       const btnCreatePhoneCheck = document.getElementById(
         'btn-create-phonecheck',
@@ -106,7 +106,7 @@
         }
         if (checkUrl) {
           try {
-            await tru.ID.openCheckUrl(checkUrl)
+            await silentauth.openCheckUrl(checkUrl)
             output.innerHTML += 'URL opened\n '
             output.innerHTML += JSON.stringify(result, null, 2)
           } catch (err) {
@@ -121,7 +121,7 @@
         spinner.classList.remove('hidden')
         const testUrl = inputTestUrl.value
         try {
-          await tru.ID.openCheckUrl(testUrl)
+          await silentauth.openCheckUrl(testUrl)
           output.innerHTML += 'URL opened\n '
           output.innerHTML += JSON.stringify(result, null, 2)
         } catch (err) {

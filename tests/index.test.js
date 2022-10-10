@@ -3,7 +3,7 @@ require('jest-fetch-mock')
 const nock = require('nock')
 const truID = require('../dist/silentauth-sdk.js')
 
-const baseUrl = 'https://eu.api.tru.id'
+const baseUrl = 'https://eu.api.silentauth.com'
 
 const testUrl = `${baseUrl}/phone_check/v0.1/checks/12345/redirect`
 
@@ -21,7 +21,7 @@ describe('WEB SDK', () => {
       network_id: "12453",
       network_name: "EE UK",
       products: [{product_id: "PCK", product_name: "Phone Check"}, {product_id: "SCK", product_name: "Sim Check"}, {product_id: "SUK", product_name: "Subscriber Check"}],
-      _links: {self: {href: "https://eu.api.tru.id/public/coverage/v0.1/device_ip"}},
+      _links: {self: {href: "https://eu.api.silentauth.com/public/coverage/v0.1/device_ip"}},
     };
 
     const coverage = nock(baseUrl)
