@@ -2,7 +2,7 @@
 
 [![License][license-image]][license-url]
 
-The Web SDK for SilentAuth providing helper functions to check whether the device is on a cellular data connection, and for requesting the `check_url` for [PhoneCheck](https://tru.id/docs/phone-check) and [SubscriberCheck](https://tru.id/docs/subscriber-check).
+The Web SDK for SilentAuth providing helper functions to check whether the device is on a cellular data connection, and for requesting the SilentAuth check.
 
 ## Installation
 
